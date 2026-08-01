@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>jQuery Mouse and Keyboard Event</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #box
+        {
+            width: 250px;
+            height: 120px;
+            background-color: lightblue;
+            border: 2px solid black;
+            line-height: 120px;
+            margin: auto;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input
+        {
+            width: 250px;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>jQuery Mouse and Keyboard Event</h2>
+
+<div id="box">
+
+Move Mouse Here
+
+</div>
+
+<br>
+
+<input type="text" id="txt" placeholder="Type Something">
+
+<script>
+
+$(document).ready(function(){
+
+    // Mouse Events
+
+    $("#box").click(function(){
+        alert("Mouse Click Event");
+    });
+
+    $("#box").dblclick(function(){
+        alert("Mouse Double Click Event");
+    });
+
+    $("#box").mouseenter(function(){
+        $(this).css("background","yellow");
+    });
+
+    $("#box").mouseleave(function(){
+        $(this).css("background","lightblue");
+    });
+
+    // Keyboard Events
+
+    $("#txt").keypress(function(){
+        $("#box").text("Key Press Event");
+    });
+
+    $("#txt").keydown(function(){
+        $("#box").text("Key Down Event");
+    });
+
+    $("#txt").keyup(function(){
+        $("#box").text("Key Up Event");
+    });
+
+});
+
+</script>
+
+</body>
+</html>

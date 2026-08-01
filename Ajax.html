@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load AJAX Text File</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #content
+        {
+            width: 500px;
+            margin: auto;
+            border: 1px solid black;
+            padding: 20px;
+            min-height: 100px;
+        }
+
+        button
+        {
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Load AJAX Text File</h2>
+
+<button id="load">Load Text File</button>
+
+<div id="content">
+
+Text File Content Will Appear Here
+
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+    $("#load").click(function(){
+
+        $("#content").load("data.txt");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
