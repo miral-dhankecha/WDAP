@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrieve Header Information</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+
+        p {
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Retrieve Header Information</h1>
+
+    <p>
+        Click the button to retrieve the header information
+        of the resource file.
+    </p>
+
+    <button onclick="getHeaders()">Get Header Information</button>
+
+    <div id="output">
+        <p>Header information will appear here.</p>
+    </div>
+
+    <script>
+
+        function getHeaders() {
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "sample.txt", true);
+
+            xhr.onreadystatechange = function() {
+
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    var contentType =
+                        xhr.getResponseHeader("Content-Type");
+
+                    var contentLength =
+                        xhr.getResponseHeader("Content-Length");
+
+                    var lastModified =
+                        xhr.getResponseHeader("Last-Modified");
+
+                    var etag =
+                        xhr.getResponseHeader("ETag");
+
+                    document.getElementById("output").innerHTML =
+                        "<h2>Header Information</h2>" +
+                        "<p><b>Content-Type:</b> " +
+                        contentType + "</p>" +
+
+                        "<p><b>Content-Length:</b> " +
+                        contentLength + "</p>" +
+
+                        "<p><b>Last-Modified:</b> " +
+                        lastModified + "</p>" +
+
+                        "<p><b>ETag:</b> " +
+                        etag + "</p>";
+                }
+            };
+
+            xhr.send();
+        }
+
+    </script>
+
+</body>
+</html>

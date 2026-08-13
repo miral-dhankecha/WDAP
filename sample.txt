@@ -1,0 +1,2 @@
+This is a sample resource file. 
+This file is used to demonstrate how HTTP response header information can be retrieved using XMLHttpRequest.

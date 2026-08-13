@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smooth Scroll to Top</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .content {
+            padding: 30px;
+            height: 1500px;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        #topButton {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #topButton:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h1>jQuery Smooth Scroll Example</h1>
+
+        <h2>Welcome to the Page</h2>
+
+        <p>
+            This is a demonstration of smooth scrolling using jQuery.
+            Scroll down the page to see the Scroll to Top button.
+        </p>
+
+        <p>
+            jQuery provides an easy way to create interactive and
+            user-friendly web pages.
+        </p>
+
+        <h2>More Content</h2>
+
+        <p>
+            This is some additional content to make the page long enough
+            to demonstrate scrolling.
+        </p>
+
+        <p>
+            Continue scrolling down to reach the bottom of the page.
+        </p>
+
+        <h2>End of Page</h2>
+
+        <p>
+            You have reached the bottom of the page.
+            Click the button below to smoothly return to the top.
+        </p>
+
+    </div>
+
+    <button id="topButton">↑ Scroll to Top</button>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#topButton").click(function() {
+
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 1000);
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
